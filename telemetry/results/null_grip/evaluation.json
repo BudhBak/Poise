@@ -1,0 +1,704 @@
+{
+  "dataset": "telemetry\\data_sil\\null_grip",
+  "info": {
+    "geometry": {
+      "track_len_m": 0.18,
+      "corridor_half_width_m": 0.00135,
+      "wire_amplitude_m": 0.0023,
+      "wire_wavelength_m": 0.06
+    },
+    "path_length_m": 0.18258278084680918,
+    "counts_per_meter": 60000.0,
+    "manifest": {
+      "generator": "firmware/sim/test_bench.cpp",
+      "grip_model": "null",
+      "seed": 2026,
+      "runs": 10,
+      "modes": "ABC",
+      "schmidt_k_s": 0.04,
+      "pace_override": 0,
+      "control_hz": 500,
+      "plant_hz": 4000,
+      "log_hz": 100,
+      "counts_per_meter": 60000,
+      "damping_fixed_mode_B": 13,
+      "damping_range_mode_C": [
+        4.5,
+        21.5
+      ],
+      "plant": {
+        "mass_x": 1.02,
+        "b_fric": 1,
+        "coulomb_n": 0.2,
+        "mass_y": 0.06,
+        "corridor_half_width_m": 0.00135,
+        "track_len_m": 0.18,
+        "wire_amplitude_m": 0.0023,
+        "wire_wavelength_m": 0.06,
+        "motor_kt_eff": 5.6,
+        "motor_r_ohm": 2.2
+      }
+    }
+  },
+  "validity_rule": {
+    "min_mt_s": 0.0,
+    "max_speed_mps": Infinity
+  },
+  "n_trials": 30,
+  "n_excluded": 0,
+  "excluded": [],
+  "n_completed": 30,
+  "pc_samples_total": 0,
+  "metrics": {
+    "contacts": {
+      "n_runs": 10,
+      "mean": {
+        "A": 0.8,
+        "B": 0.0,
+        "C": 0.9
+      },
+      "sd": {
+        "A": 2.2010098692292237,
+        "B": 0.0,
+        "C": 1.728840330651992
+      },
+      "median": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0
+      },
+      "friedman": {
+        "chi2": 3.5000000000000373,
+        "p": 0.17377394345044186
+      },
+      "pairs": [
+        {
+          "pair": "B-A",
+          "W": 0.0,
+          "p": 0.5,
+          "method": "auto",
+          "median_diff": 0.0,
+          "ci95": [
+            -0.5,
+            0.0
+          ],
+          "rank_biserial": -1.0,
+          "n_nonzero": 2,
+          "p_holm": 1.0
+        },
+        {
+          "pair": "C-A",
+          "W": 3.0,
+          "p": 1.0,
+          "method": "auto",
+          "median_diff": 0.0,
+          "ci95": [
+            0.0,
+            1.5
+          ],
+          "rank_biserial": 0.0,
+          "n_nonzero": 3,
+          "p_holm": 1.0
+        },
+        {
+          "pair": "C-B",
+          "W": 0.0,
+          "p": 0.25,
+          "method": "auto",
+          "median_diff": 0.0,
+          "ci95": [
+            0.0,
+            1.5
+          ],
+          "rank_biserial": 1.0,
+          "n_nonzero": 3,
+          "p_holm": 0.75
+        }
+      ],
+      "label": "Contacts",
+      "unit": "count",
+      "better": "lower"
+    },
+    "mt_s": {
+      "n_runs": 10,
+      "mean": {
+        "A": 3.6536,
+        "B": 5.0392,
+        "C": 4.192
+      },
+      "sd": {
+        "A": 0.32666231289615677,
+        "B": 0.3266723809024026,
+        "C": 0.38958325311942127
+      },
+      "median": {
+        "A": 3.677,
+        "B": 5.0280000000000005,
+        "C": 4.188000000000001
+      },
+      "friedman": {
+        "chi2": 18.200000000000017,
+        "p": 0.0001116658084901137
+      },
+      "pairs": [
+        {
+          "pair": "B-A",
+          "W": 0.0,
+          "p": 0.001953125,
+          "method": "auto",
+          "median_diff": 1.509,
+          "ci95": [
+            1.331,
+            1.6409999999999996
+          ],
+          "rank_biserial": 1.0,
+          "n_nonzero": 10,
+          "p_holm": 0.005859375
+        },
+        {
+          "pair": "C-A",
+          "W": 8.0,
+          "p": 0.048828125,
+          "method": "auto",
+          "median_diff": 0.5720000000000005,
+          "ci95": [
+            0.5339999999999998,
+            0.782
+          ],
+          "rank_biserial": 0.7090909090909091,
+          "n_nonzero": 10,
+          "p_holm": 0.048828125
+        },
+        {
+          "pair": "C-B",
+          "W": 0.0,
+          "p": 0.001953125,
+          "method": "auto",
+          "median_diff": -0.8969999999999998,
+          "ci95": [
+            -0.9879999999999995,
+            -0.6920000000000002
+          ],
+          "rank_biserial": -1.0,
+          "n_nonzero": 10,
+          "p_holm": 0.005859375
+        }
+      ],
+      "label": "Movement time",
+      "unit": "s",
+      "better": "lower"
+    },
+    "tp_nominal_bps": {
+      "n_runs": 10,
+      "mean": {
+        "A": 18.633791631399294,
+        "B": 13.47056644995431,
+        "C": 16.253127821091773
+      },
+      "sd": {
+        "A": 1.56492284529939,
+        "B": 0.8771335060830644,
+        "C": 1.459685499819216
+      },
+      "median": {
+        "A": 18.39094295476779,
+        "B": 13.45487135088819,
+        "C": 16.148856596324723
+      },
+      "friedman": {
+        "chi2": 18.200000000000017,
+        "p": 0.0001116658084901137
+      },
+      "pairs": [
+        {
+          "pair": "B-A",
+          "W": 0.0,
+          "p": 0.001953125,
+          "method": "auto",
+          "median_diff": -5.631836955711408,
+          "ci95": [
+            -6.13443882323484,
+            -4.996341099397338
+          ],
+          "rank_biserial": -1.0,
+          "n_nonzero": 10,
+          "p_holm": 0.005859375
+        },
+        {
+          "pair": "C-A",
+          "W": 7.0,
+          "p": 0.037109375,
+          "method": "auto",
+          "median_diff": -2.7091490070144264,
+          "ci95": [
+            -3.340825347416015,
+            -2.3581010321214384
+          ],
+          "rank_biserial": -0.7454545454545455,
+          "n_nonzero": 10,
+          "p_holm": 0.037109375
+        },
+        {
+          "pair": "C-B",
+          "W": 0.0,
+          "p": 0.001953125,
+          "method": "auto",
+          "median_diff": 3.1187838796528444,
+          "ci95": [
+            2.243659178923915,
+            3.266084895116082
+          ],
+          "rank_biserial": 1.0,
+          "n_nonzero": 10,
+          "p_holm": 0.005859375
+        }
+      ],
+      "label": "Steering throughput (ID=L/W)",
+      "unit": "bit/s",
+      "better": "higher"
+    },
+    "sd_lat_mm": {
+      "n_runs": 10,
+      "mean": {
+        "A": 0.4981330311122436,
+        "B": 0.35360344022905543,
+        "C": 0.46061366834645234
+      },
+      "sd": {
+        "A": 0.25907065966981513,
+        "B": 0.07428015520234504,
+        "C": 0.11307298941721217
+      },
+      "median": {
+        "A": 0.42463597025011557,
+        "B": 0.37152491802832305,
+        "C": 0.4353995517877857
+      },
+      "friedman": {
+        "chi2": 13.400000000000006,
+        "p": 0.0012309119026734773
+      },
+      "pairs": [
+        {
+          "pair": "B-A",
+          "W": 1.0,
+          "p": 0.00390625,
+          "method": "auto",
+          "median_diff": -0.08306200420809717,
+          "ci95": [
+            -0.10740953504771908,
+            -0.04383677188350532
+          ],
+          "rank_biserial": -0.9636363636363636,
+          "n_nonzero": 10,
+          "p_holm": 0.0078125
+        },
+        {
+          "pair": "C-A",
+          "W": 21.0,
+          "p": 0.556640625,
+          "method": "auto",
+          "median_diff": 0.007865851686919473,
+          "ci95": [
+            -0.052820077765606877,
+            0.11516254864116282
+          ],
+          "rank_biserial": 0.23636363636363636,
+          "n_nonzero": 10,
+          "p_holm": 0.556640625
+        },
+        {
+          "pair": "C-B",
+          "W": 0.0,
+          "p": 0.001953125,
+          "method": "auto",
+          "median_diff": 0.08259220240847442,
+          "ci95": [
+            0.052917374942494766,
+            0.19550092425936183
+          ],
+          "rank_biserial": 1.0,
+          "n_nonzero": 10,
+          "p_holm": 0.005859375
+        }
+      ],
+      "label": "Lateral error SD",
+      "unit": "mm",
+      "better": "lower"
+    },
+    "tp_effective_bps": {
+      "n_runs": 10,
+      "mean": {
+        "A": 28.32537846863869,
+        "B": 26.039764542248303,
+        "C": 24.482219310332788
+      },
+      "sd": {
+        "A": 9.05356904556995,
+        "B": 6.491484281313186,
+        "C": 6.671315015780177
+      },
+      "median": {
+        "A": 30.03736831171888,
+        "B": 24.60254945410842,
+        "C": 26.587521826909246
+      },
+      "friedman": {
+        "chi2": 6.200000000000003,
+        "p": 0.04504920239355775
+      },
+      "pairs": [
+        {
+          "pair": "B-A",
+          "W": 13.0,
+          "p": 0.16015625,
+          "method": "auto",
+          "median_diff": -3.8191201949051816,
+          "ci95": [
+            -7.284536536543616,
+            0.03854656314615568
+          ],
+          "rank_biserial": -0.5272727272727272,
+          "n_nonzero": 10,
+          "p_holm": 0.3203125
+        },
+        {
+          "pair": "C-A",
+          "W": 10.0,
+          "p": 0.083984375,
+          "method": "auto",
+          "median_diff": -5.0732847165509085,
+          "ci95": [
+            -9.367616762818345,
+            -0.3782040220897329
+          ],
+          "rank_biserial": -0.6363636363636364,
+          "n_nonzero": 10,
+          "p_holm": 0.251953125
+        },
+        {
+          "pair": "C-B",
+          "W": 17.0,
+          "p": 0.322265625,
+          "method": "auto",
+          "median_diff": -0.6178234873057136,
+          "ci95": [
+            -6.09175829559594,
+            2.2051191714653164
+          ],
+          "rank_biserial": -0.38181818181818183,
+          "n_nonzero": 10,
+          "p_holm": 0.322265625
+        }
+      ],
+      "label": "Effective steering throughput (W_e)",
+      "unit": "bit/s",
+      "better": "higher"
+    },
+    "contact_time_pct": {
+      "n_runs": 10,
+      "mean": {
+        "A": 7.309999268524614,
+        "B": 0.0,
+        "C": 1.1165783332242798
+      },
+      "sd": {
+        "A": 22.927964479035094,
+        "B": 0.0,
+        "C": 2.491057971688071
+      },
+      "median": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0
+      },
+      "friedman": {
+        "chi2": 2.000000000000028,
+        "p": 0.36787944117143734
+      },
+      "pairs": [
+        {
+          "pair": "B-A",
+          "W": 0.0,
+          "p": 0.5,
+          "method": "auto",
+          "median_diff": 0.0,
+          "ci95": [
+            -0.2688172043010753,
+            0.0
+          ],
+          "rank_biserial": -1.0,
+          "n_nonzero": 2,
+          "p_holm": 1.0
+        },
+        {
+          "pair": "C-A",
+          "W": 5.0,
+          "p": 1.0,
+          "method": "auto",
+          "median_diff": 0.0,
+          "ci95": [
+            -0.2688172043010753,
+            1.9269776876267748
+          ],
+          "rank_biserial": 0.0,
+          "n_nonzero": 4,
+          "p_holm": 1.0
+        },
+        {
+          "pair": "C-B",
+          "W": 0.0,
+          "p": 0.5,
+          "method": "auto",
+          "median_diff": 0.0,
+          "ci95": [
+            0.0,
+            1.9269776876267748
+          ],
+          "rank_biserial": 1.0,
+          "n_nonzero": 2,
+          "p_holm": 1.0
+        }
+      ],
+      "label": "Time in contact",
+      "unit": "%",
+      "better": "lower"
+    },
+    "jerk_long_rms": {
+      "n_runs": 10,
+      "mean": {
+        "A": 6.602236861558396,
+        "B": 5.617466433494174,
+        "C": 5.588885856543263
+      },
+      "sd": {
+        "A": 1.4060890747085906,
+        "B": 1.2299797532697183,
+        "C": 1.2381096840317758
+      },
+      "median": {
+        "A": 6.631690147011258,
+        "B": 5.757968249755802,
+        "C": 5.732084906320292
+      },
+      "friedman": {
+        "chi2": 15.200000000000017,
+        "p": 0.0005004514334406062
+      },
+      "pairs": [
+        {
+          "pair": "B-A",
+          "W": 0.0,
+          "p": 0.001953125,
+          "method": "auto",
+          "median_diff": -0.9482646916034887,
+          "ci95": [
+            -1.0426420220864259,
+            -0.8231998724753611
+          ],
+          "rank_biserial": -1.0,
+          "n_nonzero": 10,
+          "p_holm": 0.005859375
+        },
+        {
+          "pair": "C-A",
+          "W": 0.0,
+          "p": 0.001953125,
+          "method": "auto",
+          "median_diff": -0.8927838764526588,
+          "ci95": [
+            -1.1996484689846207,
+            -0.8003163388519763
+          ],
+          "rank_biserial": -1.0,
+          "n_nonzero": 10,
+          "p_holm": 0.005859375
+        },
+        {
+          "pair": "C-B",
+          "W": 20.0,
+          "p": 0.4921875,
+          "method": "auto",
+          "median_diff": -0.0016390695908559128,
+          "ci95": [
+            -0.10183363844967364,
+            0.05815641729260612
+          ],
+          "rank_biserial": -0.2727272727272727,
+          "n_nonzero": 10,
+          "p_holm": 0.4921875
+        }
+      ],
+      "label": "Longitudinal RMS jerk",
+      "unit": "m/s^3",
+      "better": "lower"
+    },
+    "jerk_trans_rms": {
+      "n_runs": 10,
+      "mean": {
+        "A": 11.269828101279591,
+        "B": 10.009470958298367,
+        "C": 10.575038820021636
+      },
+      "sd": {
+        "A": 2.4958397986763177,
+        "B": 1.5752882613720032,
+        "C": 1.5272788096616727
+      },
+      "median": {
+        "A": 10.516241396680176,
+        "B": 9.45614985464901,
+        "C": 10.497801873156412
+      },
+      "friedman": {
+        "chi2": 7.200000000000003,
+        "p": 0.02732372244729252
+      },
+      "pairs": [
+        {
+          "pair": "B-A",
+          "W": 3.0,
+          "p": 0.009765625,
+          "method": "auto",
+          "median_diff": -0.6629675085731144,
+          "ci95": [
+            -1.8807927737673822,
+            -0.07370646471706088
+          ],
+          "rank_biserial": -0.8909090909090909,
+          "n_nonzero": 10,
+          "p_holm": 0.029296875
+        },
+        {
+          "pair": "C-A",
+          "W": 11.0,
+          "p": 0.10546875,
+          "method": "auto",
+          "median_diff": -0.36706504245661886,
+          "ci95": [
+            -0.7372777904513335,
+            0.17619812321826522
+          ],
+          "rank_biserial": -0.6,
+          "n_nonzero": 10,
+          "p_holm": 0.12890625
+        },
+        {
+          "pair": "C-B",
+          "W": 9.0,
+          "p": 0.064453125,
+          "method": "auto",
+          "median_diff": 0.5382833770354232,
+          "ci95": [
+            -0.05427767523248761,
+            1.2163777397769344
+          ],
+          "rank_biserial": 0.6727272727272727,
+          "n_nonzero": 10,
+          "p_holm": 0.12890625
+        }
+      ],
+      "label": "Transverse RMS jerk",
+      "unit": "m/s^3",
+      "better": "lower"
+    },
+    "mean_damping": {
+      "n_runs": 10,
+      "mean": {
+        "A": 0.0,
+        "B": 13.0,
+        "C": 4.843098183535824
+      },
+      "sd": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.3220980960948912
+      },
+      "median": {
+        "A": 0.0,
+        "B": 13.0,
+        "C": 4.755341282904303
+      },
+      "friedman": {
+        "chi2": 20.0,
+        "p": 4.539992976248486e-05
+      },
+      "pairs": [
+        {
+          "pair": "B-A",
+          "W": 0.0,
+          "p": 0.001953125,
+          "method": "auto",
+          "median_diff": 13.0,
+          "ci95": [
+            13.0,
+            13.0
+          ],
+          "rank_biserial": 1.0,
+          "n_nonzero": 10,
+          "p_holm": 0.005859375
+        },
+        {
+          "pair": "C-A",
+          "W": 0.0,
+          "p": 0.001953125,
+          "method": "auto",
+          "median_diff": 4.755341282904303,
+          "ci95": [
+            4.613471796184316,
+            5.020354738967548
+          ],
+          "rank_biserial": 1.0,
+          "n_nonzero": 10,
+          "p_holm": 0.005859375
+        },
+        {
+          "pair": "C-B",
+          "W": 0.0,
+          "p": 0.001953125,
+          "method": "auto",
+          "median_diff": -8.244658717095696,
+          "ci95": [
+            -8.386528203815683,
+            -7.979645261032452
+          ],
+          "rank_biserial": -1.0,
+          "n_nonzero": 10,
+          "p_holm": 0.005859375
+        }
+      ],
+      "label": "Mean applied damping",
+      "unit": "N*s/m",
+      "better": null
+    }
+  },
+  "verdicts": [
+    "Contacts: no significant B vs A difference (median diff +0 count, Holm p = 1).",
+    "Contacts: no significant C vs A difference (median diff +0 count, Holm p = 1).",
+    "Contacts: no significant C vs B difference (median diff +0 count, Holm p = 0.75).",
+    "Movement time: mode B is higher than mode A (worse): median diff +1.51 s, 95% CI [+1.33, +1.64], r_rb = +1.00, Holm p = 0.00586.",
+    "Movement time: mode C is higher than mode A (worse): median diff +0.572 s, 95% CI [+0.534, +0.782], r_rb = +0.71, Holm p = 0.0488.",
+    "Movement time: mode C is lower than mode B (better): median diff -0.897 s, 95% CI [-0.988, -0.692], r_rb = -1.00, Holm p = 0.00586.",
+    "Steering throughput (ID=L/W): mode B is lower than mode A (worse): median diff -5.63 bit/s, 95% CI [-6.13, -5], r_rb = -1.00, Holm p = 0.00586.",
+    "Steering throughput (ID=L/W): mode C is lower than mode A (worse): median diff -2.71 bit/s, 95% CI [-3.34, -2.36], r_rb = -0.75, Holm p = 0.0371.",
+    "Steering throughput (ID=L/W): mode C is higher than mode B (better): median diff +3.12 bit/s, 95% CI [+2.24, +3.27], r_rb = +1.00, Holm p = 0.00586.",
+    "Lateral error SD: mode B is lower than mode A (better): median diff -0.0831 mm, 95% CI [-0.107, -0.0438], r_rb = -0.96, Holm p = 0.00781.",
+    "Lateral error SD: no significant C vs A difference (median diff +0.00787 mm, Holm p = 0.557).",
+    "Lateral error SD: mode C is higher than mode B (worse): median diff +0.0826 mm, 95% CI [+0.0529, +0.196], r_rb = +1.00, Holm p = 0.00586.",
+    "Effective steering throughput (W_e): no significant B vs A difference (median diff -3.82 bit/s, Holm p = 0.32).",
+    "Effective steering throughput (W_e): no significant C vs A difference (median diff -5.07 bit/s, Holm p = 0.252).",
+    "Effective steering throughput (W_e): no significant C vs B difference (median diff -0.618 bit/s, Holm p = 0.322).",
+    "Time in contact: no significant B vs A difference (median diff +0 %, Holm p = 1).",
+    "Time in contact: no significant C vs A difference (median diff +0 %, Holm p = 1).",
+    "Time in contact: no significant C vs B difference (median diff +0 %, Holm p = 1).",
+    "Longitudinal RMS jerk: mode B is lower than mode A (better): median diff -0.948 m/s^3, 95% CI [-1.04, -0.823], r_rb = -1.00, Holm p = 0.00586.",
+    "Longitudinal RMS jerk: mode C is lower than mode A (better): median diff -0.893 m/s^3, 95% CI [-1.2, -0.8], r_rb = -1.00, Holm p = 0.00586.",
+    "Longitudinal RMS jerk: no significant C vs B difference (median diff -0.00164 m/s^3, Holm p = 0.492).",
+    "Transverse RMS jerk: mode B is lower than mode A (better): median diff -0.663 m/s^3, 95% CI [-1.88, -0.0737], r_rb = -0.89, Holm p = 0.0293.",
+    "Transverse RMS jerk: no significant C vs A difference (median diff -0.367 m/s^3, Holm p = 0.129).",
+    "Transverse RMS jerk: no significant C vs B difference (median diff +0.538 m/s^3, Holm p = 0.129).",
+    "Mean applied damping: mode B is higher than mode A: median diff +13 N*s/m, 95% CI [+13, +13], r_rb = +1.00, Holm p = 0.00586.",
+    "Mean applied damping: mode C is higher than mode A: median diff +4.76 N*s/m, 95% CI [+4.61, +5.02], r_rb = +1.00, Holm p = 0.00586.",
+    "Mean applied damping: mode C is lower than mode B: median diff -8.24 N*s/m, 95% CI [-8.39, -7.98], r_rb = -1.00, Holm p = 0.00586."
+  ]
+}

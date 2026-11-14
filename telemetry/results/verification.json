@@ -1,0 +1,152 @@
+{
+  "checks": [
+    {
+      "check": "V1 coefficients present in admittance.h",
+      "pass": true,
+      "detail": "found 13 of 13"
+    },
+    {
+      "check": "V1 25 Hz Butterworth LPF matches design",
+      "pass": true,
+      "detail": "max |coef error| = 4.36e-10"
+    },
+    {
+      "check": "V1 5 Hz Butterworth HPF matches design",
+      "pass": true,
+      "detail": "max |coef error| = 1.83e-10"
+    },
+    {
+      "check": "V1 36 rad/s critically damped smoother matches design",
+      "pass": true,
+      "detail": "max |coef error| = 3.41e-10"
+    },
+    {
+      "check": "V2 LPF DC gain = 1 and fc = 25 Hz",
+      "pass": true,
+      "detail": "DC = 1.0000000, -3 dB at 25.002 Hz, max |pole| = 0.800844"
+    },
+    {
+      "check": "V2 HPF fc = 5 Hz, unity at Nyquist",
+      "pass": true,
+      "detail": "-3 dB at 5.001 Hz, |H(Nyquist)| = 1.00000"
+    },
+    {
+      "check": "V2 smoother unity DC, critically damped at 36 rad/s",
+      "pass": true,
+      "detail": "DC = 0.99999992, equivalent s-poles = [(-36.016+0.01j), (-36.016-0.01j)]"
+    },
+    {
+      "check": "V3 GRIP_LP_ALPHA = 1-exp(-T/20 ms)",
+      "pass": true,
+      "detail": "config 0.0951626, expected 0.09516258"
+    },
+    {
+      "check": "V3 TREMOR_MS_ALPHA = 1-exp(-T/250 ms)",
+      "pass": true,
+      "detail": "config 0.00796809, expected 0.00796809"
+    },
+    {
+      "check": "V4 analytic floor: TREMOR_RMS_FLOOR >= 3 sigma_q",
+      "pass": true,
+      "detail": "q = 16.667 um, sigma_q = 0.0623 m/s^2, floor = 0.25 m/s^2 (4.0 sigma)"
+    },
+    {
+      "check": "V4 firmware engine: quantisation-only tremor estimate < floor",
+      "pass": true,
+      "detail": "max tremor_rms over glides 0.01-0.20 m/s = 0.0923 m/s^2 (floor 0.25)"
+    },
+    {
+      "check": "V5 sanity: pure sampled damper B=10 requires b >= |B|",
+      "pass": true,
+      "detail": "b_req = 10.0000"
+    },
+    {
+      "check": "V5 voltage drive + back-EMF compensation is passive over B in [Bmin, Bmax], beta in {0, beta_max}",
+      "pass": true,
+      "detail": "b_emf = 14.25, b_phys = b_fric + b_emf = 15.25 N*s/m; worst b_req = 10.00 at B = 21.5, beta = 10; margin = 5.25 N*s/m"
+    },
+    {
+      "check": "V5 PC fallback (feed-forward dropped: B_max on filtered v, beta_max on raw v) is passive",
+      "pass": true,
+      "detail": "b_req = 10.00 < b_phys = 15.25 N*s/m (margin 5.25)"
+    },
+    {
+      "check": "V6 device is passive (true motor work <= 0)",
+      "pass": true,
+      "detail": "true motor work = -1130.33 mJ, PC active ticks = 0"
+    },
+    {
+      "check": "V6 observer is an upper bound on generated energy (true work <= -W)",
+      "pass": true,
+      "detail": "true -1130.33 mJ <= bound -100.00 mJ"
+    },
+    {
+      "check": "V6 mode B also passive",
+      "pass": true,
+      "detail": "true motor work = -1483.69 mJ, PC active ticks = 0"
+    },
+    {
+      "check": "V7 without PC the configuration generates energy (test is meaningful)",
+      "pass": true,
+      "detail": "true motor work without PC = +64.1 mJ, max speed 0.619 m/s"
+    },
+    {
+      "check": "V7 with PC the generated energy is bounded (<= 5 mJ) and PC engages",
+      "pass": true,
+      "detail": "true motor work with PC = -11.32 mJ, observer min = -2.78 mJ, PC active ticks = 14"
+    }
+  ],
+  "passivity": {
+    "b_emf": 14.254544660079599,
+    "b_phys": 15.254544660079599,
+    "margin": 5.254544657817069,
+    "min_b_emf": 9.1,
+    "pass": true
+  },
+  "time_domain": {
+    "nominal_C": {
+      "true_motor_work_j": -1.1303324872356446,
+      "observer_energy_j": 0.10000000149011612,
+      "observer_min_j": 0.0,
+      "pc_ticks": 0,
+      "max_speed": 0.2610166853089203
+    },
+    "nominal_B": {
+      "true_motor_work_j": -1.4836908502798725,
+      "observer_energy_j": 0.10000000149011612,
+      "observer_min_j": 0.0,
+      "pc_ticks": 0,
+      "max_speed": 0.2444935886073434
+    },
+    "active_no_pc": {
+      "true_motor_work_j": 0.06408613574935829,
+      "observer_energy_j": -0.06351529061794281,
+      "observer_min_j": -0.06351529061794281,
+      "pc_ticks": 0,
+      "max_speed": 0.6185452858557925
+    },
+    "active_with_pc": {
+      "true_motor_work_j": -0.011320459256423304,
+      "observer_energy_j": 0.011770166456699371,
+      "observer_min_j": -0.0027841771952807903,
+      "pc_ticks": 14,
+      "max_speed": 0.5262473477079327
+    }
+  },
+  "config": {
+    "counts_per_meter": 60000.0,
+    "control_dt": 0.0020000000949949026,
+    "damping_min": 4.5,
+    "damping_max": 21.5,
+    "damping_fixed": 13.0,
+    "tremor_floor": 0.25,
+    "tremor_span": 0.5,
+    "motor_kt_eff": 5.599999904632568,
+    "motor_r": 2.200000047683716,
+    "supply_v": 12.0,
+    "i_max": 1.2000000476837158,
+    "vel_deadband": 0.004000000189989805,
+    "pc_beta_max": 10.0,
+    "b_friction_est": 1.0
+  }
+}

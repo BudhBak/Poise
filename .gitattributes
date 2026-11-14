@@ -1,0 +1,5 @@
+# Normalise text to LF in the repository and in every checkout: docs/InnovationResearch.md is
+# SHA-256 pinned (telemetry/results/innovation/prereg.sha256), so its bytes must not change on clone.
+* text=auto eol=lf
+*.png binary
+*.pdf binary

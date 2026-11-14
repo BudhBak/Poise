@@ -1,0 +1,79 @@
+{
+  "gcc": "7-2017q4/bin/arm-none-eabi-g++.exe",
+  "flags": [
+    "-c",
+    "-Os",
+    "-g0",
+    "-mcpu=cortex-m4",
+    "-mfloat-abi=hard",
+    "-mfpu=fpv4-sp-d16",
+    "-std=gnu++17",
+    "-fno-rtti",
+    "-fno-exceptions",
+    "-fno-builtin",
+    "-fsigned-char",
+    "-ffunction-sections",
+    "-fdata-sections",
+    "-Wall",
+    "-Wextra"
+  ],
+  "compiler_warnings": [],
+  "probes": {
+    "probe_v2": {
+      "cycles_zero_wait": 807.0,
+      "cycles_bound_x2": 1614.0,
+      "us_bound": 33.625,
+      "pass": true,
+      "forbidden": [],
+      "lib": [
+        "fabsf (4 cyc)",
+        "sqrtf (40 cyc)"
+      ],
+      "loops": [
+        "HapticEngine::clamp01(float): 0 loop(s), 11 instructions",
+        "probe_v2: 0 loop(s), 298 instructions"
+      ],
+      "indirect": []
+    },
+    "probe_db": {
+      "cycles_zero_wait": 4941.0,
+      "cycles_bound_x2": 9882.0,
+      "us_bound": 205.875,
+      "pass": true,
+      "forbidden": [],
+      "lib": [
+        "cosf (400 cyc)",
+        "fabsf (4 cyc)",
+        "fmodf (250 cyc)",
+        "sqrtf (40 cyc)"
+      ],
+      "loops": [
+        "HapticEngine::clamp01(float): 0 loop(s), 11 instructions",
+        "InnovationEngine::step(unsigned short, long): 0 loop(s), 23 instructions",
+        "InnovationEngine::stepCore(float, unsigned short): 4 loop(s), 642 instructions",
+        "probe_db: 0 loop(s), 9 instructions"
+      ],
+      "indirect": []
+    },
+    "probe_worst": {
+      "cycles_zero_wait": 4941.0,
+      "cycles_bound_x2": 9882.0,
+      "us_bound": 205.875,
+      "pass": true,
+      "forbidden": [],
+      "lib": [
+        "cosf (400 cyc)",
+        "fabsf (4 cyc)",
+        "fmodf (250 cyc)",
+        "sqrtf (40 cyc)"
+      ],
+      "loops": [
+        "HapticEngine::clamp01(float): 0 loop(s), 11 instructions",
+        "InnovationEngine::step(unsigned short, long): 0 loop(s), 23 instructions",
+        "InnovationEngine::stepCore(float, unsigned short): 4 loop(s), 642 instructions",
+        "probe_worst: 0 loop(s), 9 instructions"
+      ],
+      "indirect": []
+    }
+  }
+}

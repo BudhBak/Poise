@@ -1,0 +1,80 @@
+{
+  "elf": "src.ino.elf",
+  "f_cpu": 48000000.0,
+  "entry_exit_cycles": 58,
+  "roots": {
+    "control_isr": {
+      "functions": [
+        "controlIsr()"
+      ],
+      "rate_hz": 500.0,
+      "nvic_priority": 1,
+      "cycles_zero_wait": 1749.0,
+      "cycles_bound_x2": 3498.0,
+      "us_bound": 72.875,
+      "cpu_fraction_bound": 0.0364375,
+      "forbidden": [],
+      "lib": [
+        "fabsf (4 cyc)",
+        "sqrtf (40 cyc)"
+      ],
+      "loops": [
+        "HapticEngine::reset(long): 0 loop(s), 53 instructions",
+        "RA4M1_Hw::resetHardwareEncoder(): 0 loop(s), 7 instructions",
+        "controlIsr(): 0 loop(s), 570 instructions",
+        "driveBridge(float): 0 loop(s), 45 instructions"
+      ],
+      "indirect": [],
+      "pass": true
+    },
+    "led_matrix_isr": {
+      "functions": [
+        "gpt_counter_overflow_isr",
+        "ArduinoLEDMatrix::turnOnLedISR(st_timer_callback_args*)"
+      ],
+      "rate_hz": 10000.0,
+      "nvic_priority": 12,
+      "cycles_zero_wait": 683.0,
+      "cycles_bound_x2": 1366.0,
+      "us_bound": 28.458333333333336,
+      "cpu_fraction_bound": 0.28458333333333335,
+      "forbidden": [],
+      "lib": [],
+      "loops": [
+        "ArduinoLEDMatrix::next(): 0 loop(s), 38 instructions",
+        "ArduinoLEDMatrix::reverse(unsigned long): 0 loop(s), 17 instructions",
+        "ArduinoLEDMatrix::turnOnLedISR(st_timer_callback_args*): 0 loop(s), 68 instructions",
+        "gpt_counter_overflow_isr: 0 loop(s), 38 instructions",
+        "memcpy: 1 loop(s), 9 instructions",
+        "millis: 0 loop(s), 4 instructions",
+        "r_gpt_call_callback: 0 loop(s), 25 instructions"
+      ],
+      "indirect": [
+        "ArduinoLEDMatrix::next() @0x426e",
+        "r_gpt_call_callback @0x7d4e"
+      ]
+    },
+    "millis_agt0_isr": {
+      "functions": [
+        "agt_int_isr",
+        "timer_micros_callback(st_timer_callback_args*)"
+      ],
+      "rate_hz": 1000.0,
+      "nvic_priority": 8,
+      "cycles_zero_wait": 178.0,
+      "cycles_bound_x2": 356.0,
+      "us_bound": 7.416666666666667,
+      "cpu_fraction_bound": 0.007416666666666667,
+      "forbidden": [],
+      "lib": [],
+      "loops": [
+        "agt_int_isr: 0 loop(s), 51 instructions",
+        "timer_micros_callback(st_timer_callback_args*): 0 loop(s), 6 instructions"
+      ],
+      "indirect": [
+        "agt_int_isr @0x89d0"
+      ]
+    }
+  },
+  "lower_priority_cpu_fraction_bound": 0.29200000000000004
+}
